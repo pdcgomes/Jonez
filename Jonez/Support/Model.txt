@@ -1,0 +1,125 @@
+Draft design documento that specifies the players attributes:
+
+Attributes
+==========
+
+Education
+Happiness
+Health
+Rest
+
+
+"Levable entites", entities that can be leveled
+Base entity name, followed by all levels in ascending order
+each level has a level number, a name, description, time units to complete, and optional cost
+
+Professions 
+===========
+
+Bartender
+Designer
+Lawyer
+Mechanic
+Musician
+Painter
+Programmer
+
+ideas:
+- consider having negotiation skills to negotiage better rates when applying to jobs
+- profession leveling, some levels may have certain requirements (such as education, skills, etc.)
+
+Education
+=========
+
+Degree  Name
+		Level | Name | Desc | Units | Optional cost
+
+Areas:
+
+Academic
+Arts
+Finance
+IT
+Law
+
+Entertainment
+=============
+
+
+Hobbies
+=======
+
+BTT
+Gaming
+Music
+Painting
+Running
+Scuba diving
+
+Certain hobbies could grant access to events (w/prize money, etc.) and other jobs
+Each hobbie may require an upfront investment (for btt you need to buy a bycicle)
+
+Everything is measured in time units
+Depending on what the time unit was spent on, it will contribute positively or negatively to a certain attribute (e.g., BTT hobbie will decrease your rest, increase your happiness, and eventually decrease your health - consider having better/safer gear contribute to decrease the probability of accidents?)
+
+
+Level progressions requires (besides dependencies), N time units to advance to the next level 
+
+
+Engine 
+We need to able to store all dependencies, precedences, levels, relationships, etc.
+
+Whenever a certain action is taken, it should go through the RuleEngine, it will firstly validate the action, and then process it
+
+Actions:
+Types of actions:
+
+- TimeUnitAction 	- costs a time unit
+- BuyAction 		- costs a money unit
+
+E.g.
+There are two
+
+You're at the office, you try to spend a timeunit at work
+You wrap that action into a TimeUnitAction, keeping track of the player, and target
+That action is evaluated by the rules engine. If valid, it processes the action, which:
+
+- Deetermines what players attributes should be affected, and computes their respective values
+- Decrements available time units
+
+Whenever a certain value is changed, the rule engine evaluates all the rules and affect all dependent values
+
+e.g.
+
+Education: 0-100
+Happiness: 0-100
+Health: 0-100
+
+
+------
+
+Places:
+=======
+
+There are various kinds of places
+
+- Office
+- Store
+- JobCenter
+- College
+
+Buyable Items:
+==============
+
+- Appliances (can break down - fridge, tv, etc.)
+- Misc 
+- Chance (grants you a chance to win something)
+- Food
+
+
+
+
+
+
+
+
